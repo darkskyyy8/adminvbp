@@ -11,7 +11,9 @@ const GalleryOi = ({ data, onDelete, onEdit, onAdd }) => {
     );
     if (confirmDelete) {
       try {
-        await axios.delete(`http://127.0.0.1:8000/api/galleries/${id}`);
+        await axios.delete(
+          `https://vbp-com.preview-domain.com/public/api/galleries/${id}`
+        );
         window.location.reload();
       } catch (error) {
         console.error("error deleting item:", error);
@@ -60,7 +62,10 @@ const GalleryOi = ({ data, onDelete, onEdit, onAdd }) => {
                   <div className="flex justify-center">
                     <video width={100} height={400} controls>
                       <source
-                        src={"http://127.0.0.1:8000/storage/" + item.video}
+                        src={
+                          "https://vbp-com.preview-domain.com/public/storage/" +
+                          item.video
+                        }
                       ></source>
                     </video>
                   </div>

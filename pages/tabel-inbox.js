@@ -13,7 +13,9 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/pesan");
+        const response = await axios.get(
+          "https://vbp-com.preview-domain.com/public/api/pesan"
+        );
         console.log("Api Response:", response.data);
         setData(response.data);
       } catch (error) {

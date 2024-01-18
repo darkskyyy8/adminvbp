@@ -10,7 +10,9 @@ const TabelAdmin = () => {
   useEffect(() => {
     const fetcData = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/users`);
+        const response = await axios.get(
+          `https://vbp-com.preview-domain.com/public/api/users`
+        );
         console.log("Api Response:", response.data);
         setData(response.data);
       } catch (error) {

@@ -15,7 +15,7 @@ const EditProfilwebPage = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:8000/api/profilweb/${id}`)
+        .get(`https://vbp-com.preview-domain.com/public/api/profilweb/${id}`)
         .then((response) => setFormData(response.data))
         .catch((error) =>
           console.error("Error fetching Profilweb data:", error)
@@ -29,7 +29,7 @@ const EditProfilwebPage = () => {
   };
 
   const handleSave = () => {
-    const apiUrl = "http://localhost:8000/api/profilweb";
+    const apiUrl = "https://vbp-com.preview-domain.com/public/api/profilweb";
 
     // Cek apakah data sudah ada dengan ID yang diberikan
     if (id) {

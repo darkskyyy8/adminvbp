@@ -14,7 +14,7 @@ const EditAkun = ({ userId }) => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/users/${userId}`
+          `https://vbp-com.preview-domain.com/public/api/users/${userId}`
         );
         const userData = response.data;
 
@@ -41,7 +41,7 @@ const EditAkun = ({ userId }) => {
 
     try {
       const response = await axios.post(
-        `http://127.0.0.1:8000/api/users/${userId}`,
+        `https://vbp-com.preview-domain.com/public/api/users/${userId}`,
         data
       );
 

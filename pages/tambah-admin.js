@@ -21,7 +21,7 @@ const TambahAkun = () => {
     try {
       // Kirim permintaan POST ke endpoint API Laravel menggunakan Axios
       const response = await axios.post(
-        `http://127.0.0.1:8000/api/users/`,
+        `https://vbp-com.preview-domain.com/public/api/users/`,
         data
       );
 

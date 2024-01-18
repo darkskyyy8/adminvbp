@@ -1,16 +1,19 @@
 // Halaman yang menampilkan item
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import EditItemPage from './edit';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import EditItemPage from "./edit";
 
 const ShowItemPage = () => {
-  const [currentItem, setCurrentItem] = useState({/* your item data */});
+  const [currentItem, setCurrentItem] = useState({
+    /* your item data */
+  });
 
   useEffect(() => {
     // Fetch data item yang ingin ditampilkan
-    axios.get('http://localhost:8000/api/profilweb/')  // Ganti dengan endpoint yang sesuai
-      .then(response => setCurrentItem(response.data))
-      .catch(error => console.error('Error fetching item:', error));
+    axios
+      .get("https://vbp-com.preview-domain.com/public/api/profilweb/") // Ganti dengan endpoint yang sesuai
+      .then((response) => setCurrentItem(response.data))
+      .catch((error) => console.error("Error fetching item:", error));
   }, []);
 
   return (

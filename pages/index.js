@@ -6,7 +6,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const loginapi = async () => {
-    const url = "http://127.0.0.1:8000/api/login";
+    const url = "https://vbp-com.preview-domain.com/public/api/login";
     const data = { email: email, password: password };
 
     try {

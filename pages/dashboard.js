@@ -11,7 +11,9 @@ function Index() {
   useEffect(() => {
     const fetchGalleryCount = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/galleries");
+        const response = await axios.get(
+          "https://vbp-com.preview-domain.com/public/api/galleries"
+        );
         const count = response.data.length;
         setGalleryCount(count);
       } catch (error) {
@@ -21,7 +23,9 @@ function Index() {
 
     const fetchMessages = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/pesan?limit=5");
+        const response = await fetch(
+          "https://vbp-com.preview-domain.com/public/api/pesan?limit=5"
+        );
         const data = await response.json();
         setMessages(data);
       } catch (error) {

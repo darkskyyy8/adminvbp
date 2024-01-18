@@ -10,7 +10,9 @@ const OiTable = ({ data, onSearch }) => {
     );
     if (confirmDelete) {
       try {
-        await axios.delete(`http://127.0.0.1:8000/api/pesan/${id}`);
+        await axios.delete(
+          `https://vbp-com.preview-domain.com/public/api/pesan/${id}`
+        );
         window.location.reload();
       } catch (error) {
         console.error("error deleting item:", error);

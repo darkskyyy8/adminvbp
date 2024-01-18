@@ -11,10 +11,13 @@ const AddProfileWeb = () => {
 
   const Tambah = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/api/profilweb", {
-        judul,
-        sub_judul: subJudul,
-      });
+      const response = await axios.post(
+        "https://vbp-com.preview-domain.com/public/api/profilweb",
+        {
+          judul,
+          sub_judul: subJudul,
+        }
+      );
       if (response.status == 200) {
         alert("Berhasil menambahkan profile web");
       } else;

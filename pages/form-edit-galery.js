@@ -19,7 +19,9 @@ const EditGaleri = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/locations");
+        const response = await axios.get(
+          "https://vbp-com.preview-domain.com/public/api/locations"
+        );
         const fetchedLocations = response.data.locations;
 
         setLocationsData(fetchedLocations); // Update the state
@@ -39,7 +41,7 @@ const EditGaleri = () => {
         }
 
         const response = await axios.get(
-          `http://localhost:8000/api/galleries/${id}`
+          `https://vbp-com.preview-domain.com/public/api/galleries/${id}`
         );
         const galleryData = response.data;
 
@@ -70,7 +72,7 @@ const EditGaleri = () => {
       formData.append("location_id", selectedLocation);
 
       const response = await axios.post(
-        `http://localhost:8000/api/galleries/${id}`,
+        `https://vbp-com.preview-domain.com/public/api/galleries/${id}`,
         formData,
         {
           headers: {

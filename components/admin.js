@@ -11,7 +11,9 @@ const Admin = ({ data, onEdit, onAdd }) => {
     );
     if (confirmDelete) {
       try {
-        await axios.delete(`http://127.0.0.1:8000/api/users/${id}`);
+        await axios.delete(
+          `https://vbp-com.preview-domain.com/public/api/users/${id}`
+        );
         window.location.reload();
       } catch (error) {
         console.error("error deleting akun:", error);

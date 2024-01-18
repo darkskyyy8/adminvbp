@@ -18,7 +18,9 @@ const Tambah_Galeri = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/locations");
+        const response = await axios.get(
+          "https://vbp-com.preview-domain.com/public/api/locations"
+        );
         const locationsData = response.data.locations;
 
         setLocations(locationsData);
@@ -51,9 +53,12 @@ const Tambah_Galeri = () => {
 
   const handleAddLocation = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/api/locations", {
-        nama_location: locationName,
-      });
+      const response = await axios.post(
+        "https://vbp-com.preview-domain.com/public/api/locations",
+        {
+          nama_location: locationName,
+        }
+      );
 
       if (response.data.success) {
         alert("Lokasi baru berhasil ditambahkan!");
@@ -108,7 +113,7 @@ const Tambah_Galeri = () => {
       setShowSuccessPopup(true);
 
       const response = await axios.post(
-        "http://localhost:8000/api/galleries",
+        "https://vbp-com.preview-domain.com/public/api/galleries",
         formData,
         {
           headers: {
@@ -134,7 +139,7 @@ const Tambah_Galeri = () => {
   const handleDeleteLocation = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/api/locations/${selectedLocation}`
+        `https://vbp-com.preview-domain.com/public/api/locations/${selectedLocation}`
       );
 
       if (response.data.success) {
